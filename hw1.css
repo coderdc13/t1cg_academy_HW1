@@ -1,0 +1,75 @@
+body {
+    background-color: black;
+}
+p {
+    color: gold;
+}
+h1 {
+    color: gold;
+}
+
+h5 {
+    color: white;
+}
+th {
+    text-align: center; 
+    text-decoration: underline;
+}
+td, #triviaInpt {
+    text-align: center;
+}
+#contact {
+    text-align: center;
+}
+table, th, td {
+    border: 1px solid blue;
+    color: gold;
+}
+#steveTitle {
+    text-align: center;
+    color: blue;
+}
+.date, .time {
+    text-align: center;
+    color: green;
+}
+#steveReal, #steveVideo {
+    height: 300px;
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto;
+}
+.messageBoard {
+    align-items: center;
+}
+button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.centerClass {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#steveVideo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.classHidden {
+    display: none !important;
+
+}
+
+a {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
