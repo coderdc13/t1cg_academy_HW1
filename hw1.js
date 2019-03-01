@@ -1,100 +1,102 @@
-questionRA = [
+//week two js task one is the trivia function
+
+ let questionRA = [
     "What is the nickname of Steve Wilkos? a: Bamdino, b: Bam-Bam, c: Dino",
-    "In what branch of the US Armed Forces did Steve Wilkos serve? a: USMC, b: US Army, c: US Air Force, d: US Navy",
-    "In what police force was Steve Wilkos? a: Chicago PD, b: NYPD, c: LAPD, d: MPDC (Washington, DC Police)",
+    "In what branch of the US Armed Forces did Steve Wilkos serve? a: US Army, b: USMC, c: US Air Force, d: US Navy",
+    "In what police force was Steve Wilkos? a: LAPD, b: NYPD, c: Chicago PD, d: MPDC (Washington, DC Police)",
 ];
-    const titleInput = document.getElementById('titleInput');
+    const titlexInput = document.getElementById('titlexInput');
     const yearInput = document.getElementById('yearInput');
-    const triviaContnt = document.getElementById('triviaContnt');
-    const triviaInpt = document.getElementById('triviaInpt');
-    const answrBtn = document.getElementById('answrBtn');
-    const nxtQuestn = document.getElementById('nxtQuestn');
+    const triviaContent = document.getElementById('triviaContent');
+    const trivInput = document.getElementById('trivInput');
+    const enterAnsButton = document.getElementById('enterAnsButton');
+    const nextQuest = document.getElementById('nextQuest');
     const rstGame = document.getElementById('rstGame');
-    const ansRslt = document.getElementById('answrRslt');
+    const responseResult = document.getElementById('responseResult');
     //directly above is set of variables that I think are mainly related to the quiz function...
     const steveVideo = document.getElementById('steveVideo');
     const steveReal = document.getElementById('steveReal');
     //directly above is the set of variables that I think are mainly related to the toggle function...
-    const movieTbl = document.getElementById('movieTbl');
-    const msgContainer = document.getElementById('msgContainer');
+    const movieTable = document.getElementById('movieTable');
+    const msgContainer = document.getElementById('msgContainerid');
     //directly above is the set of variables that I think are mainly related to the table entry function...
 
 
 triviaFunc = () => {
-    triviaContnt.classList.toggle('classHider');
-    triviaInpt.classList.toggle('classHider');
-    answrBtn.classList.toggle('classHider');
-    nxtQuestn.classList.toggle('classHider');
+    triviaContent.classList.toggle('classHider');
+    trivInput.classList.toggle('classHider');
+    enterAnsButton.classList.toggle('classHider');
+    nextQuest.classList.toggle('classHider');
     rstGame.classList.toggle('classHider');
-    triviaContnt.innerHTML = questionArray[0];
+    triviaContent.innerHTML = questionRA[0];
 };
 
 enterAnswer = () => {
-    ansRslt.classList.toggle('classHider');
-    switch (questionRA.indexOf(triviaContnt.innerHTML)) {
+    responseResult.classList.toggle('classHider');
+    switch (questionRA.indexOf(triviaContent.innerHTML)) {
         case 0:
-        question1Handler();
+        questionOneHandler();
         break;
         case 1:
-        question2Handler();
+        questionTwoHandler();
         break;
         case 2:
-        question3Handler();
+        questionThreeHandler();
         break;
     }
 };
 
-question1Handler = () => {
-    if (triviaInput.value === 'a') {
-      ansRslt.innerHTML = 'Correct!';
+questionOneHandler = () => {
+    if (trivInput.value === 'a' || trivInput.value === 'A') {
+      responseResult.innerHTML = 'Correct!';
     } else {
-      nxtQuestn.classList.toggle('classHider');
-      answRslt.innerHTML = 'Incorrect, please reset game';
+      nextQuest.classList.toggle('classHider');
+      responseResult.innerHTML = 'Incorrect, please reset game';
     }
     resetInputValues();
   };
   
-  question2Handler = () => {
-    if (triviaInput.value === 'a') {
-      ansRslt.innerHTML = 'Correct!';
+  questionTwoHandler = () => {
+    if (trivInput.value === 'b') {
+      responseResult.innerHTML = 'Correct!';
     } else {
-      nxtQuestn.classList.toggle('classHider');
-      ansRslt.innerHTML = 'Incorrect, please reset game';
+      nextQuest.classList.toggle('classHider');
+      responseResult.innerHTML = 'Incorrect, please reset game';
     }
     resetInputValues();
   };
   
-  question3Handler = () => {
-    if (triviaInput.value === 'a') {
-      ansRslt.innerHTML = 'Correct! You win the game';
+  questionThreeHandler = () => {
+    if (trivInput.value === 'c') {
+      responseResult.innerHTML = 'Correct! You win the game';
     } else {
-      nxtQuestn.classList.toggle('classHider');
-      ansRslt.innerHTML = 'Incorrect, please reset game';
+      nextQuest.classList.toggle('classHider');
+      responseResult.innerHTML = 'Incorrect, please reset game';
     }
     resetInputValues();
-    nxtQuestn.classList.toggle('classHider');
+    //nextQuest.classList.toggle('classHider');
   };
 
   nextQuestionFunc = () => {
-    if (questionRA.indexOf(triviaCntnt.innerHTML) === 0) {
-      triviaContnt.innerHTML = questionArray[1];
-      ansRslt.classList.toggle('classHider');
-    } else if (questionRA.indexOf(triviaContnt.innerHTML) === 1) {
-      triviaContnt.innerHTML = questionRA[2];
-      ansRslt.classList.toggle('classHider');
+    if (questionRA.indexOf(triviaContent.innerHTML) === 0) {
+      triviaContent.innerHTML = questionRA[1];
+      responseResult.classList.toggle('classHider');
+    } else if (questionRA.indexOf(triviaContent.innerHTML) === 1) {
+      triviaContent.innerHTML = questionRA[2];
+      responseResult.classList.toggle('classHider');
     } else {
-      triviaContnt.innerHTML = 'GAME OVER!!';
+      triviaContent.innerHTML = 'GAME OVER!!';
     }
   };
 
   resetGameFunc = () => {
-    triviaContnt.classList.toggle('classHider');
-    triviaInpt.classList.toggle('classHider');
-    answrBtn.classList.toggle('classHider');
-    ansRslt.classList.toggle('classHider');
+    triviaContent.classList.toggle('classHider');
+    trivInput.classList.toggle('classHider');
+    enterAnsButton.classList.toggle('classHider');
+    responseResult.classList.toggle('classHider');
     rstGame.classList.toggle('classHider');
-    triviaContnt.innerHTML = '';
-    ansRslt.innerHTML = '';
+    triviaContent.innerHTML = '';
+    responseResult.innerHTML = '';
     resetInputValues();
   };
 
@@ -108,12 +110,12 @@ question1Handler = () => {
   //directly above is the function that I believe pertains mainly to the toggle...
 
   addRow = () => {
-    const rowCount = movieTbl.rows.length;
-    const row = movieTbl.insertRow(rowCount);
+    const rowCount = movieTable.rows.length;
+    const row = movieTable.insertRow(rowCount);
     const cell1 = row.insertCell(0);
     const cell2 = row.insertCell(1);
   
-    cell1.innerHTML = titleInput.value;
+    cell1.innerHTML = titlexInput.value;
     cell2.innerHTML = yearInput.value;
   
     this.resetInputValues();
@@ -121,9 +123,9 @@ question1Handler = () => {
   //directly above is function that adds rows...
 
   resetInputValues = () => {
-      titleInput.value = '';
+      titlexInput.value = '';
       yearInput.value = '';
-      triviaInput.value = '';
+      trivInput.value = '';
     
   };
 
